@@ -1,15 +1,21 @@
-namespace ShoppingAppSQL.DatabaseItems;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class SkincareItems : ContentPage
+namespace ShoppingAppSQL.DataBaseItems
 {
-	public SkincareItems()
-	{
-		Content = new VerticalStackLayout
-		{
-			Children = {
-				new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "Welcome to .NET MAUI!"
-				}
-			}
-		};
-	}
+    public class SkincareItems
+    {
+        [PrimaryKey, AutoIncrement]
+        public int SkincareItemID { get; set; }
+        public string SkincareName { get; set; }
+        public int SkincareQuantity { get; set; }
+        public string SkincareImage { get; set; }
+        public decimal SkincarePrice { get; set; }
+        public string SkincareDescription { get; set; }
+    }
 }

@@ -1,15 +1,27 @@
-namespace ShoppingAppSQL.DatabaseItems;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Client : ContentPage
+namespace ShoppingAppSQL.DataBaseItems
 {
-	public Client()
-	{
-		Content = new VerticalStackLayout
-		{
-			Children = {
-				new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "Welcome to .NET MAUI!"
-				}
-			}
-		};
-	}
+    public class Client
+    {
+        [PrimaryKey, AutoIncrement]
+        public int ClientId { get; set; }
+        public string ClientName { get; set; }
+        public string ClientSurname { get; set; }
+        public string ClientEmail { get; set; }
+        public string ContactNumber { get; set; }
+        public string ClientPassword { get; set; }
+
+        [ForeignKey(typeof(ClientType))]
+        public int ClientTypeId { get; set; }
+
+        [OneToOne]
+        public ClientType ClientType { get; set; }
+    }
 }

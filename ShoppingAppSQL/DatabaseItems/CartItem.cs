@@ -1,15 +1,14 @@
-namespace ShoppingAppSQL.DatabaseItems;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class CartItem : ContentPage
+namespace ShoppingAppSQL.DataBaseItems
 {
-	public CartItem()
-	{
-		Content = new VerticalStackLayout
-		{
-			Children = {
-				new Label { HorizontalOptions = LayoutOptions.Center, VerticalOptions = LayoutOptions.Center, Text = "Welcome to .NET MAUI!"
-				}
-			}
-		};
-	}
+    public class CartItem
+    {
+        public SkincareItems Product { get; set; }
+        public int Quantity { get; set; }
+    }
 }

@@ -58,14 +58,14 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\aha_bha_serum.png" />
-	  <None Remove="Resources\Images\blemish_cleanser.png" />
-	  <None Remove="Resources\Images\hyaluroni_acid_srum.png" />
+	  <None Remove="Resources\Images\hyaluronic_acid_serum.png" />
 	  <None Remove="Resources\Images\hydrating_cleanser.png" />
+	  <None Remove="Resources\Images\nivea_moisturiser.png" />
 	  <None Remove="Resources\Images\oil_cleanser.png" />
-	  <None Remove="Resources\Images\pigmentation_set.png" />
+	  <None Remove="Resources\Images\skincare_set.png" />
 	  <None Remove="Resources\Images\spa_icon.png" />
 	  <None Remove="Resources\Images\spf_fifty.png" />
-	  <None Remove="Resources\Images\vitaminc_serum.png" />
+	  <None Remove="Resources\Images\tinted_moisturiser.png" />
 	</ItemGroup>
 
 	<ItemGroup>
