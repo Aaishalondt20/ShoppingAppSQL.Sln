@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:a="clr-namespace:ShoppingAppSQL.Models"
+             x:Class="ShoppingAppSQL.Models.CartPage"
+             xmlns:DataBaseItems="clr-namespace:ShoppingAppSQL.DataBaseItems">
+
+    <StackLayout>
+        <ListView x:Name="CartListView" ItemsSource="{Binding BasketItems}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="DataBaseItems:CartItem">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="{Binding SkincareImage}" HeightRequest="200" WidthRequest="200"/>
+                            <Label Text="{Binding SkincareName}" VerticalOptions="Center"/>
+                            <Label Text="{Binding CartPrice, StringFormat='Price: {0:C}'}" VerticalOptions="Center"/>
+                            <Label Text="Quantity: " VerticalOptions="Center"/>
+                            <Entry Text="{Binding SkincareQuantity}" Keyboard="Numeric"/>
+                            <Button Text="Remove" Clicked="OnRemoveClicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="{Binding TotalPrice, StringFormat='Total Price: {0:C}'}"/>
+    </StackLayout>
+</ContentPage>

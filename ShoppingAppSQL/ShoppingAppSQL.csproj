@@ -40,7 +40,6 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
 
 		<!-- Splash Screen -->
 		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -57,15 +56,45 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Remove="ShoppingDatabaseServices\CartPage.xaml" />
+	  <MauiXaml Remove="ShoppingDatabaseServices\ProfilePage.xaml" />
+	  <MauiXaml Remove="ShoppingDatabaseServices\SearchPage.xaml" />
+	  <MauiXaml Remove="ShoppingDatabaseServices\ShoppingCart.xaml" />
+	  <MauiXaml Remove="ShoppingDatabaseServices\SkincareDetailsPage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="Resources\Images\aha_bha_serum.png" />
+	  <None Remove="Resources\Images\housetab_png.png" />
 	  <None Remove="Resources\Images\hyaluronic_acid_serum.png" />
 	  <None Remove="Resources\Images\hydrating_cleanser.png" />
 	  <None Remove="Resources\Images\nivea_moisturiser.png" />
 	  <None Remove="Resources\Images\oil_cleanser.png" />
+	  <None Remove="Resources\Images\profile.png" />
+	  <None Remove="Resources\Images\search_png.png" />
+	  <None Remove="Resources\Images\shoppingcart_png.png" />
 	  <None Remove="Resources\Images\skincare_set.png" />
 	  <None Remove="Resources\Images\spa_icon.png" />
 	  <None Remove="Resources\Images\spf_fifty.png" />
 	  <None Remove="Resources\Images\tinted_moisturiser.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="ShoppingDatabaseServices\CartPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="ShoppingDatabaseServices\ProfilePage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="ShoppingDatabaseServices\SearchPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="ShoppingDatabaseServices\ShoppingCart.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="ShoppingDatabaseServices\SkincareDetailsPage.xaml">
+	    <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -77,6 +106,12 @@
 		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.8" />
 		<PackageReference Include="SQLitePCLRaw.core" Version="2.1.8" />
 		<PackageReference Include="Syncfusion.Maui.ListView" Version="25.1.35" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="ShoppingDatabaseServices\SearchPage.xaml.cs">
+	    <DependentUpon>SearchPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>

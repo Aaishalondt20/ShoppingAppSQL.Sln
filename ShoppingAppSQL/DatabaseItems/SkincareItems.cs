@@ -11,7 +11,7 @@ namespace ShoppingAppSQL.DataBaseItems
     public class SkincareItems
     {
         [PrimaryKey, AutoIncrement]
-        public int SkincareItemID { get; set; }
+        public int SkincareItemId { get; set; }
         public string SkincareName { get; set; }
         public int SkincareQuantity { get; set; }
         public string SkincareImage { get; set; }
